@@ -18,7 +18,7 @@ wsServer.on("request", request => {
     connection.on("message", message => {
         const result = JSON.parse(message.utf8Data)
         //I have received a message from the client
-        //a user want to create a new game
+        //a user want to create a new g190
         if (result.method === "create") {
             const clientId = result.clientId;
             const gameId = guid();
@@ -41,7 +41,7 @@ wsServer.on("request", request => {
         if (result.method === "join") {
 
             const clientId = result.clientId;
-            const game.Id = result.gameId;
+            const gameId = result.gameId;
             const game = games[gameId];
             if (game.clients.length >= 3) 
             {
