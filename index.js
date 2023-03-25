@@ -125,6 +125,6 @@ function S4() {
 const guid = () => (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
 
 //Serving The Static Files On Same Server(Removing in production build :D)
-app.get("/", (req,res)=> res.sendFile(__dirname + "/index2.html"))
+app.get("/", (req,res)=> res.sendFile(__dirname + "/index.html"))
 
 app.listen(9191, ()=>console.log("Listening on http port 9091"))
