@@ -2,7 +2,7 @@ const http = require("http");
 const app = require("express")();
 const websocketServer = require("websocket").server
 const httpServer = http.createServer();
-httpServer.listen(9190, () => console.log("Listening.. on 9090"))
+httpServer.listen(9190, () => console.log("Listening.. on 9190"))
 //hashmap clients
 const clients = {};
 const games = {};
@@ -18,7 +18,7 @@ wsServer.on("request", request => {
     connection.on("message", message => {
         const result = JSON.parse(message.utf8Data)
         //I have received a message from the client
-        //a user want to create a new g190
+        //a user want to create a new game
         if (result.method === "create") {
             const clientId = result.clientId;
             const gameId = guid();
@@ -51,7 +51,8 @@ wsServer.on("request", request => {
             const color =  {"0": "Red", "1": "Green", "2": "Blue"}[game.clients.length]
             game.clients.push({
                 "clientId": clientId,
-                "color": color
+                "color": color,
+                "gameId":gameId
             })
             //start the game
             if (game.clients.length === 3) updateGameState();
@@ -125,6 +126,20 @@ function S4() {
 const guid = () => (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S4() + "-" + S4() + S4() + S4()).toLowerCase();
 
 //Serving The Static Files On Same Server(Removing in production build :D)
-app.get("/", (req,res)=> res.sendFile(__dirname + "/index.html"))
 
-app.listen(9191, ()=>console.log("Listening on http port 9091"))
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/FrontEnd/index.html");
+});
+
+app.get("/app.js", (req, res) => {
+    res.sendFile(__dirname + "/FrontEnd/app.js");
+});
+
+
+app.get("/style.css", (req, res) => {
+    res.sendFile(__dirname + "/FrontEnd/style.css");
+});
+
+
+
+app.listen(9191, ()=>console.log("Listening on http port 9191"))
