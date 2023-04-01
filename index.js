@@ -1,6 +1,6 @@
 const http = require("http");
-var express = require('express');
-var app = express();
+// var express = require('express');
+// var app = express();
 const websocketServer = require("websocket").server
 const httpServer = http.createServer();
 httpServer.listen(9190, () => console.log("Listening.. on 9190"))
@@ -143,9 +143,9 @@ const guid = () => (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S
 // });
 
 
-app.use(express.static('FrontEnd'));
+// app.use(express.static('FrontEnd'));
 
 
 
-app.listen(9191, ()=>console.log("Listening on http port 9191"));
+// app.listen(9191, ()=>console.log("Listening on http port 9191"));
 // app.listen(9291, ()=>console.log("Listening on http port 9291"));

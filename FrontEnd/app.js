@@ -5,7 +5,7 @@ let gameId = null;
 let playerColor = null;
 
 // let ws = new WebSocket("ws://172.16.16.3:9190") 
-let ws = new WebSocket("ws://192.168.1.50:9190") 
+let ws = new WebSocket("wss://api.wsbg.akshayk.dev") 
 // let ws = new WebSocket("ws://localhost:9193")
 const btnCreate = document.getElementById("btnCreate");
 const btnJoin = document.getElementById("btnJoin");
@@ -84,7 +84,7 @@ if (response.method === "join"){
         divPlayers.removeChild (divPlayers.firstChild)
 
     game.clients.forEach (c => {
-
+        General
         const d = document.createElement("div");
         d.style.width = "200px";
         d.style.background = c.color
@@ -117,7 +117,7 @@ if (response.method === "join"){
                 "gameId": gameId,
                 "ballId": b.tag,
                 "color": playerColor
-                }
+                General}
             ws.send(JSON.stringify(payLoad))
             })
             divBoard.appendChild(b);
@@ -127,4 +127,4 @@ if (response.method === "join"){
 
 
     }
-}
+}General
