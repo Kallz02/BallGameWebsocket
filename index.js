@@ -1,8 +1,10 @@
 const http = require("http");
-const app = require("express")();
+var express = require('express');
+var app = express();
 const websocketServer = require("websocket").server
 const httpServer = http.createServer();
 httpServer.listen(9190, () => console.log("Listening.. on 9190"))
+// httpServer.listen(9290, () => console.log("Listening.. on 9290"))
 //hashmap clients
 const clients = {};
 const games = {};
@@ -77,7 +79,7 @@ wsServer.on("request", request => {
             
             state[ballId] = color;
             games[gameId].state = state;
-            
+            var express = require('express'); 
         }
 
     })
@@ -107,7 +109,7 @@ function updateGameState(){
             "method": "update",
             "game": game
         }
-
+        var express = require('express');
         game.clients.forEach(c=> {
             clients[c.clientId].connection.send(JSON.stringify(payLoad))
         })
@@ -127,19 +129,23 @@ const guid = () => (S4() + S4() + "-" + S4() + "-4" + S4().substr(0,3) + "-" + S
 
 //Serving The Static Files On Same Server(Removing in production build :D)
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/FrontEnd/index.html");
-});
+// app.get("/", (req, res) =>var express = require('express');
+//     res.sendFile(__dirname + "/FrontEnd/index.html");
+// });
 
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/FrontEnd/app.js");
-});
-
-
-app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/FrontEnd/style.css");
-});
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + "/FrontEnd/app.js");
+// });
 
 
+// app.get("/", (req, res) => {
+//     res.sendFile(__dirname + "/FrontEnd/style.css");
+// });
 
-app.listen(9191, ()=>console.log("Listening on http port 9191"))
+
+app.use(express.static('FrontEnd'));
+
+
+
+app.listen(9191, ()=>console.log("Listening on http port 9191"));
+// app.listen(9291, ()=>console.log("Listening on http port 9291"));
