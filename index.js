@@ -131,12 +131,12 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/FrontEnd/index.html");
 });
 
-app.get("/app.js", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(__dirname + "/FrontEnd/app.js");
 });
 
 
-app.get("/style.css", (req, res) => {
+app.get("/", (req, res) => {
     res.sendFile(__dirname + "/FrontEnd/style.css");
 });
 
