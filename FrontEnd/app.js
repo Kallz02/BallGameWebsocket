@@ -4,7 +4,8 @@ let clientId = null;
 let gameId = null;
 let playerColor = null;
 
-let ws = new WebSocket("ws://172.16.16.3:9190") 
+// let ws = new WebSocket("ws://172.16.16.3:9190") 
+let ws = new WebSocket("ws://localhost:9190") 
 // let ws = new WebSocket("ws://localhost:9193")
 const btnCreate = document.getElementById("btnCreate");
 const btnJoin = document.getElementById("btnJoin");
