@@ -117,7 +117,7 @@ if (response.method === "join"){
                 "gameId": gameId,
                 "ballId": b.tag,
                 "color": playerColor
-                General}
+                }
             ws.send(JSON.stringify(payLoad))
             })
             divBoard.appendChild(b);
@@ -127,4 +127,4 @@ if (response.method === "join"){
 
 
     }
-}General
+}
