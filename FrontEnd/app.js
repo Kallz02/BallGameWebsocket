@@ -52,14 +52,14 @@ const response = JSON.parse(message.data);
 if (response.method === "connect"){
         clientId = response.clientId;
         console.log("Client id Set successfully " + clientId)
-        clientdd.innerHTML="Client ID:"+clientId;
+        clientdd.innerHTML="<b>Client ID:</b>"+clientId;
 }
 
 //create the game
 if (response.method === "create"){
     gameId = response.game.id;
     console.log("game successfully created with id " + response.game.id + " with " + response.game.balls + " balls")  
-    gamesDisplay.innerHTML="New Game ID : " + response.game.id;
+    gamesDisplay.innerHTML="<b>New Game ID :</b> " + response.game.id + " <b>(Click Join)</b>";
 }
 
 
@@ -84,7 +84,6 @@ if (response.method === "join"){
         divPlayers.removeChild (divPlayers.firstChild)
 
     game.clients.forEach (c => {
-        General
         const d = document.createElement("div");
         d.style.width = "200px";
         d.style.background = c.color
@@ -92,7 +91,7 @@ if (response.method === "join"){
         divPlayers.appendChild(d);
 
         if (c.clientId === clientId) playerColor = c.color;
-                    gamesDisplay.innerHTML="Game ID :" + c.gameId; 
+                    gamesDisplay.innerHTML="<b>Game ID :</b>" + c.gameId; 
         })
 
         //Generating The Ball Buttons
