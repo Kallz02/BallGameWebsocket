@@ -29,6 +29,8 @@ This is a Multiplayer Game Which Uses **Nodejs** and **Websockets** to update Pl
 
 ## Features 🐋
 
+- **SelfHosted** using **Coolify** and **Nginx Proxy Manager**
+
 - generates client id only if server send a initial response
 
 - generates a unique string for each game
