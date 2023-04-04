@@ -4,7 +4,7 @@
 
 This is a Multiplayer Game Which Uses **Nodejs** and **Websockets** to update Player moves in real time
 
-## Note : Only Works with 2 players No more no less ⛔
+## Note : Only Works with 3 players No more no less ⛔
 
 ## Tools used 🔨
 
