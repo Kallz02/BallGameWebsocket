@@ -17,13 +17,13 @@ This is a Multiplayer Game Which Uses **Nodejs** and **Websockets** to update Pl
 
 1. visit webpage
 
-2. Open 3 incognito tabs with same webpage url (including the one opened)
+2. Open **3 incognito tabs** with same webpage url (including the one opened)
 
-3. On one client click create game
+3. On one client click **create game**
 
-4. after that in same client click join game
+4. after that in same client click **Join game**
 
-5. copy the game ID to other two and click join
+5. **Copy the game ID** to other two  clients and click join
 
 6. Then play 🎉 , Whenever you click on one block it will be update accross all of them
 
